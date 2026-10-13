@@ -1,0 +1,24 @@
+void main() {
+  print("Valid Input");
+  checkGrades([85, 45, 92]);
+
+  print("Bad Input");
+  checkGrades(["hi", "hello", "hi"]);
+}
+
+String checkGrades(List<Object> scores) {
+  try {
+    for (int i = 0; i < scores.length; i++) {
+      int score = scores[i] as int;
+      
+      if (score >= 75) {
+        print("Score $score: Passed");
+      } else {
+        print("Score $score: Failed");
+      }
+    }
+    return "All grades processed successfully.";
+  } catch (e) {
+    return "Error: Invalid input detected. Please ensure all grades are numbers.";
+  }
+}
